@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ExpTrack
 
-## Getting Started
+ExpTrack is a web application for school that allows you to track your expenses. You can have groups of friends to share expenses with, and you can add expenses to these groups. You can also add friends to your groups.
 
-First, run the development server:
+## Technical choices
+
+### Metaframework
+
+I choose to use [Next.js](https://nextjs.org/) for the frontend because it allows me to use React and to have a server-side rendering.
+
+### Styling
+
+I use [TailwindCSS](https://tailwindcss.com/) for the styling because it is a CSS framework that I like and that I am familiar with. It allows me to build a responsive website easily. On top of TailwindCSS I use [shadcn/ui](https://ui.shadcn.com/) components library (build with [radixUI](https://www.radix-ui.com/)).
+
+### Others
+
+To validate form I use [react-hook-form](https://react-hook-form.com/) and [zod](https://zod.dev/). I use [swr](https://swr.vercel.app/) to fetch data and [pnpm](https://pnpm.io/) as package manager.
+
+## Installation
+
+### Prerequisites
+
+| Name                              | Version  |
+| --------------------------------- | -------- |
+| [Node.js](https://nodejs.org/en/) | v18.12.0 |
+| [pnpm](https://pnpm.io/)          | v8.4.0   |
+
+### Environment variables
+
+Copy and rename `.env.example` to `.env.local` and fill the variables.
+
+### Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+```
+
+### Run the app
+
+```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to use it
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+See the [documentation](./HOWTO.md).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Bug
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- All forwardRef/ref error comes from radixUI and shadcn/ui
+- className did not match error comes from Next.js
